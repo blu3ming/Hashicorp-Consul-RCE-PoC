@@ -54,7 +54,7 @@ def delete_service():
 		print("[X] There was an error deleting the service")
 
 if __name__ == '__main__':
-  try:
+  	try:
 		threading.Thread(target=create_service, args=()).start()
 	except Exception as e:
 		log.error(str(e))
