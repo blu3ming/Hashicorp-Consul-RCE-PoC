@@ -12,10 +12,9 @@ def create_service():
 	url = "http://{}:8500/v1/agent/service/register".format(rhost)
 
 	headers = {
-        "X-Consul-Token":acl_token,
-        "Content-Length": "213",
-        "Content-Type": "application/json"
-     }
+		"X-Consul-Token":acl_token,
+		"Content-Type": "application/json"
+	}
 
 	payload = {
 		"ID":"shell",
