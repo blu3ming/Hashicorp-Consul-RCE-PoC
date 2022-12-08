@@ -35,7 +35,7 @@ Consul returns an interactive console:
 ![imagen](https://user-images.githubusercontent.com/25083316/206324244-5449ebe5-269d-4634-847e-614f7b09c108.png)
 
 ## Deleting the service
-Finally, we need to delete the service created in order to hide oir activity. This can be done making a PUT request to the /v1/agent/service/deregister/[NAME] endpoint, of course, still using the ACL Token from Consul.
+Finally, we need to delete the service created in order to hide our activity. This can be done with a PUT request to the /v1/agent/service/deregister/[NAME] endpoint, of course, still using the ACL Token from Consul.
 ![imagen](https://user-images.githubusercontent.com/25083316/206324287-f6ad616c-67f7-4e9a-b114-1f33ac50fd85.png)
 
 ## Dependencies
