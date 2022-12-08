@@ -1,6 +1,12 @@
 # Hashicorp Consul - Remote Command Execution PoC
 Author: blu3ming
+
 This is a variation of the PoC found in Metasploit. The objective of this script is not to depend on that tool (OSCP style) and to perform the same procedure manually.
+
+## Use
+You need to set LHOST, LPORT (if 443 is already in use on your machine), RHOST and ACL_TOKEN (if apply) inside the script first. This script gets a reverse shell automatically, there's no need of netcat.
+
+`python consul_rce_poc.py`
 
 ## Consul
 Consul is a free and open-source service networking platform developed by HashiCorp. It has a RCE vulnerability when creating a service through it's API.
